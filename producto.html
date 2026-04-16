@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camisa Blanca Premium | Marea</title>
+  <meta
+    name="description"
+    content="Descubre la Camisa Blanca Premium de Marea. Diseño elegante, materiales de calidad y estilo versátil."
+  />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 font-sans text-white">
+
+  <!-- NAVBAR -->
+  <header class="border-b border-[#588b8b] bg-gray-800">
+    <nav class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between">
+      <a href="index.html" class="text-3xl font-bold tracking-wide text-[#ffd5c2]">
+        Marea
+      </a>
+
+      <div class="w-full md:max-w-md">
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          class="w-full rounded-full border border-[#588b8b] bg-white px-4 py-2 text-gray-800 outline-none focus:border-[#ffd5c2]"
+        />
+      </div>
+
+      <ul class="flex flex-wrap items-center gap-4 text-sm font-medium text-white">
+        <li><a href="index.html" class="transition hover:text-[#ffd5c2]">Home</a></li>
+        <li><a href="catalogo.html" class="transition hover:text-[#ffd5c2]">Catálogo</a></li>
+        <li><a href="carrito.html" class="transition hover:text-[#ffd5c2]">Carrito</a></li>
+        <li><a href="checkout.html" class="transition hover:text-[#ffd5c2]">Checkout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-7xl px-4 py-10">
+    <!-- VISTA DE PRODUCTO -->
+    <section class="grid gap-10 lg:grid-cols-2">
+      <!-- IMAGEN -->
+      <div class="overflow-hidden rounded-3xl border border-[#588b8b] bg-gray-700 shadow-lg">
+        <img
+          src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80"
+          alt="Camisa blanca elegante de algodón Marea"
+          class="h-[500px] w-full object-cover"
+        />
+      </div>
+
+      <!-- INFO PRODUCTO -->
+      <div class="rounded-3xl border border-[#588b8b] bg-gray-700 p-6 shadow-lg">
+        <p class="text-sm uppercase tracking-widest text-[#ffd5c2]">Marea</p>
+        <h1 class="mt-2 text-4xl font-bold">Camisa Blanca Premium</h1>
+        <p class="mt-2 text-gray-200">Referencia: MR-CL-1024</p>
+
+        <p class="mt-6 text-3xl font-bold text-white">89,00 €</p>
+
+        <div class="mt-6">
+          <label for="talla" class="mb-2 block text-sm font-medium">Talla</label>
+          <select
+            id="talla"
+            class="w-full rounded-xl border border-[#588b8b] bg-white px-4 py-3 text-gray-800"
+          >
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+          <p class="mt-2 text-sm text-gray-300">Disponible en stock</p>
+        </div>
+
+        <div class="mt-4">
+          <label for="cantidad" class="mb-2 block text-sm font-medium">Cantidad</label>
+          <input
+            id="cantidad"
+            type="number"
+            min="1"
+            value="1"
+            class="w-full rounded-xl border border-[#588b8b] bg-white px-4 py-3 text-gray-800"
+          />
+        </div>
+
+        <button
+          class="mt-6 w-full rounded-full bg-[#588b8b] px-6 py-3 text-sm font-semibold text-white transition hover:scale-105 hover:bg-[#4b7575]"
+        >
+          Agregar al carrito
+        </button>
+
+        <!-- DESCRIPCIÓN -->
+        <div class="mt-8 border-t border-[#588b8b] pt-6">
+          <h2 class="text-2xl font-semibold text-[#ffd5c2]">Descripción</h2>
+          <p class="mt-3 text-gray-200">
+            Una camisa blanca de corte elegante, diseñada para ofrecer una silueta limpia,
+            sofisticada y muy versátil. Perfecta para elevar cualquier look diario o formal.
+          </p>
+
+          <h3 class="mt-6 text-xl font-semibold text-[#ffd5c2]">Materiales</h3>
+          <p class="mt-2 text-gray-200">
+            100% algodón de alta calidad, tacto suave, tejido transpirable y acabado premium.
+          </p>
+
+          <h3 class="mt-6 text-xl font-semibold text-[#ffd5c2]">Uso recomendado</h3>
+          <p class="mt-2 text-gray-200">
+            Ideal para oficina, reuniones, cenas, eventos especiales o combinaciones urbanas
+            elegantes con pantalón sastre o vaquero.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS RELACIONADOS -->
+    <section class="mt-16">
+      <h2 class="mb-6 text-3xl font-bold text-[#ffd5c2]">También te puede gustar</h2>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="overflow-hidden rounded-2xl border border-[#588b8b] bg-gray-700 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <a href="producto.html">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+              alt="Blazer beige elegante Marea"
+              class="h-64 w-full object-cover"
+            />
+          </a>
+          <div class="p-4">
+            <a href="producto.html">
+              <h3 class="text-lg font-semibold">Blazer Beige Marea</h3>
+            </a>
+            <p class="mt-2 font-bold text-white">129,00 €</p>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl border border-[#588b8b] bg-gray-700 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <a href="producto.html">
+            <img
+              src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80"
+              alt="Pantalón sastre negro Marea"
+              class="h-64 w-full object-cover"
+            />
+          </a>
+          <div class="p-4">
+            <a href="producto.html">
+              <h3 class="text-lg font-semibold">Pantalón Sastre Negro</h3>
+            </a>
+            <p class="mt-2 font-bold text-white">99,00 €</p>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl border border-[#588b8b] bg-gray-700 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <a href="producto.html">
+            <img
+              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
+              alt="Bolso de cuero marrón Marea"
+              class="h-64 w-full object-cover"
+            />
+          </a>
+          <div class="p-4">
+            <a href="producto.html">
+              <h3 class="text-lg font-semibold">Bolso Cuero Atelier</h3>
+            </a>
+            <p class="mt-2 font-bold text-white">95,00 €</p>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl border border-[#588b8b] bg-gray-700 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+          <a href="producto.html">
+            <img
+              src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80"
+              alt="Sneakers blancas urbanas Marea"
+              class="h-64 w-full object-cover"
+            />
+          </a>
+          <div class="p-4">
+            <a href="producto.html">
+              <h3 class="text-lg font-semibold">Sneakers Blancas Urban</h3>
+            </a>
+            <p class="mt-2 font-bold text-white">110,00 €</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-[#588b8b] bg-gray-800">
+    <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 md:grid-cols-3">
+      <div>
+        <h3 class="mb-3 text-lg font-semibold text-[#ffd5c2]">Categorías</h3>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>Calzado</li>
+          <li>Camisas</li>
+          <li>Pantalones</li>
+          <li>Accesorios</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-lg font-semibold text-[#ffd5c2]">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-200">
+          <li>Términos y condiciones</li>
+          <li>Política de privacidad</li>
+          <li>Sobre la marca</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-3 text-lg font-semibold text-[#ffd5c2]">Contacto</h3>
+        <p class="text-sm text-gray-200">contacto@marea.com</p>
+        <p class="text-sm text-gray-200">+33 555 123 456</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
