@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marea | Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="checkout-page" aria-labelledby="checkout-title">
+      <section class="checkout-panel">
+        <header class="checkout-header">
+          <p class="brand">Marea</p>
+          <h1 id="checkout-title">Formulario de pago</h1>
+          <p class="step-meta" id="stepMeta">Paso 1 de 3</p>
+
+          <div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Progreso del checkout">
+            <div class="progress-track">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <ol class="progress-steps" aria-hidden="true">
+              <li class="active">1</li>
+              <li>2</li>
+              <li>3</li>
+            </ol>
+          </div>
+        </header>
+
+        <form id="checkoutForm" novalidate>
+          <section class="step active" data-step="1" aria-labelledby="step1-title">
+            <h2 id="step1-title">Datos personales</h2>
+
+            <label for="fullName">Nombre completo</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+            <p class="field-error" data-error-for="fullName"></p>
+
+            <label for="email">Correo electronico</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+            <p class="field-error" data-error-for="email"></p>
+
+            <label for="phone">Telefono</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+            <p class="field-error" data-error-for="phone"></p>
+          </section>
+
+          <section class="step" data-step="2" aria-labelledby="step2-title" hidden>
+            <h2 id="step2-title">Direccion de entrega</h2>
+
+            <label for="address">Direccion (calle y numero)</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" required />
+            <p class="field-error" data-error-for="address"></p>
+
+            <div class="field-row">
+              <div>
+                <label for="city">Ciudad</label>
+                <input id="city" name="city" type="text" autocomplete="address-level2" required />
+                <p class="field-error" data-error-for="city"></p>
+              </div>
+              <div>
+                <label for="postalCode">Codigo postal</label>
+                <input id="postalCode" name="postalCode" type="text" autocomplete="postal-code" required />
+                <p class="field-error" data-error-for="postalCode"></p>
+              </div>
+            </div>
+
+            <label for="country">Pais</label>
+            <input id="country" name="country" type="text" autocomplete="country-name" required />
+            <p class="field-error" data-error-for="country"></p>
+          </section>
+
+          <section class="step" data-step="3" aria-labelledby="step3-title" hidden>
+            <h2 id="step3-title">Pago con tarjeta</h2>
+
+            <label for="cardNumber">Numero de tarjeta</label>
+            <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="cc-number" required />
+            <p class="field-error" data-error-for="cardNumber"></p>
+
+            <label for="cardHolder">Nombre del titular</label>
+            <input id="cardHolder" name="cardHolder" type="text" autocomplete="cc-name" required />
+            <p class="field-error" data-error-for="cardHolder"></p>
+
+            <div class="field-row">
+              <div>
+                <label for="cardExpiry">Fecha de expiracion</label>
+                <input id="cardExpiry" name="cardExpiry" type="text" inputmode="numeric" maxlength="5" placeholder="MM/AA" autocomplete="cc-exp" required />
+                <p class="field-error" data-error-for="cardExpiry"></p>
+              </div>
+              <div>
+                <label for="cardCvv">CVV</label>
+                <input id="cardCvv" name="cardCvv" type="password" inputmode="numeric" maxlength="4" autocomplete="cc-csc" required />
+                <p class="field-error" data-error-for="cardCvv"></p>
+              </div>
+            </div>
+
+            <p class="security-note" aria-live="polite">
+              <span class="lock-icon" aria-hidden="true">&#128274;</span>
+              Candado seguro. Tus datos viajan cifrados de extremo a extremo.
+            </p>
+          </section>
+
+          <div class="actions">
+            <button type="button" id="backBtn" class="btn btn-ghost" disabled>Volver</button>
+            <button type="button" id="nextBtn" class="btn btn-primary">Siguiente</button>
+            <button type="submit" id="confirmBtn" class="btn btn-primary btn-confirm" hidden>Confirmar compra</button>
+          </div>
+        </form>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </section>
+
+      <aside class="summary" aria-label="Resumen de compra">
+        <h2>Resumen</h2>
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <strong>$84.00</strong>
+        </div>
+        <div class="summary-line">
+          <span>Impuestos</span>
+          <strong>$16.00</strong>
+        </div>
+        <div class="summary-total">
+          <span>Total</span>
+          <strong>$100.00</strong>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
