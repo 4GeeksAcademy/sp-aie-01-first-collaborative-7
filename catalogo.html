@@ -17,11 +17,11 @@
   </script>
 </head>
 
-<body class="bg-gray-800 text-white font-sans">
+<body class="bg-gray-800 text-white" style="font-family: Arial, sans-serif;">
 
 <header class="border-b border-[#588b8b]">
   <nav class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center p-4 gap-4">
-    
+
     <a href="index.html" class="text-2xl font-bold text-[#ffd5c2]">Marea</a>
 
     <input
@@ -32,11 +32,11 @@
     >
 
     <ul class="flex gap-4 text-sm">
-      <li><a href="index.html" class="hover:text-[#ffd5c2]">Home</a></li>
-      <li><a href="catalogo.html" class="hover:text-[#ffd5c2]">Catálogo</a></li>
-      <li><a href="carrito.html" class="hover:text-[#ffd5c2]">Carrito</a></li>
-      <li><a href="checkout.html" class="hover:text-[#ffd5c2]">Checkout</a></li>
-      <li><a href="#" class="hover:text-[#ffd5c2]">Mi cuenta</a></li>
+      <li><a href="index.html" class="hover:text-[#ffd5c2] transition">Inicio</a></li>
+      <li><a href="catalogo.html" class="hover:text-[#ffd5c2] transition">Catálogo</a></li>
+      <li><a href="carrito.html" class="hover:text-[#ffd5c2] transition">Carrito</a></li>
+      <li><a href="checkout.html" class="hover:text-[#ffd5c2] transition">Pago</a></li>
+      <li><a href="#" class="hover:text-[#ffd5c2] transition">Mi cuenta</a></li>
     </ul>
 
   </nav>
@@ -44,88 +44,159 @@
 
 <main role="main" class="max-w-7xl mx-auto px-4 py-10">
 
-  <!-- TÍTULO -->
   <section class="mb-6">
     <h1 class="text-3xl font-bold text-[#ffd5c2]">Catálogo</h1>
     <p class="mt-2 text-gray-300">Descubre la colección de Marea.</p>
   </section>
 
-  <!-- FILTROS -->
-  <section class="mb-10">
-    <div class="grid md:grid-cols-2 gap-4">
+  <section class="mb-10 grid md:grid-cols-2 gap-4">
+    <div>
+      <label for="categoria" class="block mb-2 text-sm">Categoría</label>
+      <select id="categoria" class="p-3 rounded text-black w-full">
+        <option>Todas</option>
+        <option>Camisas</option>
+        <option>Pantalones</option>
+        <option>Calzado</option>
+        <option>Accesorios</option>
+      </select>
+    </div>
 
-      <div>
-        <label for="categoria" class="block mb-2 text-sm">Categoría</label>
-        <select id="categoria" class="p-3 rounded text-black w-full">
-          <option>Todas</option>
-          <option>Camisas</option>
-          <option>Pantalones</option>
-          <option>Calzado</option>
-          <option>Accesorios</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="talla" class="block mb-2 text-sm">Talla</label>
-        <select id="talla" class="p-3 rounded text-black w-full">
-          <option>Todas</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-        </select>
-      </div>
-
+    <div>
+      <label for="talla" class="block mb-2 text-sm">Talla</label>
+      <select id="talla" class="p-3 rounded text-black w-full">
+        <option>Todas</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
     </div>
   </section>
 
-  <!-- PRODUCTOS -->
   <section>
     <h2 class="sr-only">Listado de productos</h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <!-- 20 PRODUCTOS -->
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?shirt" loading="lazy" alt="Camisa Premium Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Camisa Premium</h3>
+        <p class="font-bold">89€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?shirt" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Camisa premium Marea"></a><h3 class="mt-2 font-semibold">Camisa Premium</h3><p class="font-bold">89€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?jacket" loading="lazy" alt="Blazer Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Blazer</h3>
+        <p class="font-bold">129€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?jacket" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Blazer elegante Marea"></a><h3 class="mt-2 font-semibold">Blazer Marea</h3><p class="font-bold">129€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?pants" loading="lazy" alt="Pantalón Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Pantalón</h3>
+        <p class="font-bold">99€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?pants" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Pantalón Marea"></a><h3 class="mt-2 font-semibold">Pantalón</h3><p class="font-bold">99€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?dress" loading="lazy" alt="Vestido Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Vestido</h3>
+        <p class="font-bold">115€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?dress" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Vestido Marea"></a><h3 class="mt-2 font-semibold">Vestido</h3><p class="font-bold">115€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?sweater" loading="lazy" alt="Jersey Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Jersey</h3>
+        <p class="font-bold">79€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?sweater" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Jersey Marea"></a><h3 class="mt-2 font-semibold">Jersey</h3><p class="font-bold">79€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?coat" loading="lazy" alt="Abrigo Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Abrigo</h3>
+        <p class="font-bold">159€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?coat" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Abrigo Marea"></a><h3 class="mt-2 font-semibold">Abrigo</h3><p class="font-bold">159€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?bag" loading="lazy" alt="Bolso Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Bolso</h3>
+        <p class="font-bold">95€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?bag" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Bolso Marea"></a><h3 class="mt-2 font-semibold">Bolso</h3><p class="font-bold">95€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?sneakers" loading="lazy" alt="Zapatillas Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Zapatillas</h3>
+        <p class="font-bold">110€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?sneakers" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Sneakers Marea"></a><h3 class="mt-2 font-semibold">Sneakers</h3><p class="font-bold">110€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?fashion" loading="lazy" alt="Top Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Top</h3>
+        <p class="font-bold">65€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?fashion" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Top Marea"></a><h3 class="mt-2 font-semibold">Top</h3><p class="font-bold">65€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?clothes" loading="lazy" alt="Conjunto Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Conjunto</h3>
+        <p class="font-bold">120€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?clothes" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Look Marea"></a><h3 class="mt-2 font-semibold">Look</h3><p class="font-bold">120€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?jeans" loading="lazy" alt="Jeans Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Jeans</h3>
+        <p class="font-bold">90€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?jeans" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Jeans Marea"></a><h3 class="mt-2 font-semibold">Jeans</h3><p class="font-bold">90€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?heels" loading="lazy" alt="Tacones Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Tacones</h3>
+        <p class="font-bold">140€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?heels" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Heels Marea"></a><h3 class="mt-2 font-semibold">Heels</h3><p class="font-bold">140€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?tshirt" loading="lazy" alt="Camiseta Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Camiseta</h3>
+        <p class="font-bold">35€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?tshirt" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Camiseta Marea"></a><h3 class="mt-2 font-semibold">Tshirt</h3><p class="font-bold">35€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?hat" loading="lazy" alt="Sombrero Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Sombrero</h3>
+        <p class="font-bold">50€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?hat" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Sombrero Marea"></a><h3 class="mt-2 font-semibold">Hat</h3><p class="font-bold">50€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?watch" loading="lazy" alt="Reloj Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Reloj</h3>
+        <p class="font-bold">180€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?watch" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Reloj Marea"></a><h3 class="mt-2 font-semibold">Watch</h3><p class="font-bold">180€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?hoodie" loading="lazy" alt="Sudadera Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Sudadera</h3>
+        <p class="font-bold">85€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?hoodie" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Hoodie Marea"></a><h3 class="mt-2 font-semibold">Hoodie</h3><p class="font-bold">85€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?sportswear" loading="lazy" alt="Ropa deportiva Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Deporte</h3>
+        <p class="font-bold">95€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?sportswear" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Sport Marea"></a><h3 class="mt-2 font-semibold">Sport</h3><p class="font-bold">95€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?outfit" loading="lazy" alt="Conjunto urbano Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Conjunto Urbano</h3>
+        <p class="font-bold">150€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?outfit" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Outfit Marea"></a><h3 class="mt-2 font-semibold">Outfit</h3><p class="font-bold">150€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?accessories" loading="lazy" alt="Accesorios Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Accesorios</h3>
+        <p class="font-bold">60€</p>
+      </article>
 
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?accessories" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Accesorios Marea"></a><h3 class="mt-2 font-semibold">Accessories</h3><p class="font-bold">60€</p></article>
-
-      <article class="bg-gray-700 p-4 rounded-2xl shadow"><a href="producto.html"><img src="https://source.unsplash.com/400x500/?style" loading="lazy" class="h-64 w-full object-cover rounded-lg" alt="Estilo Marea"></a><h3 class="mt-2 font-semibold">Style</h3><p class="font-bold">130€</p></article>
+      <article class="bg-gray-700 p-4 rounded-2xl shadow hover:scale-105 transition">
+        <a href="producto.html"><img src="https://source.unsplash.com/400x500/?style" loading="lazy" alt="Estilo Marea" class="h-64 w-full object-cover rounded-lg"></a>
+        <h3 class="mt-2 font-semibold">Estilo</h3>
+        <p class="font-bold">130€</p>
+      </article>
 
     </div>
   </section>
