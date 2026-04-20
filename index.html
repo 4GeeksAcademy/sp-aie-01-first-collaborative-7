@@ -23,6 +23,121 @@
 				}
 			};
 		</script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@graph": [
+					{
+						"@type": "Organization",
+						"@id": "https://marea.example/#organization",
+						"name": "Marea",
+						"url": "https://marea.example/",
+						"logo": "https://marea.example/assets/logo-marea.png",
+						"description": "Coastal-inspired fashion brand with relaxed silhouettes and ocean-toned essentials.",
+						"contactPoint": {
+							"@type": "ContactPoint",
+							"contactType": "customer support",
+							"email": "support@marea.example",
+							"telephone": "+1-800-214-0725"
+						},
+						"sameAs": [
+							"https://www.instagram.com/marea.example",
+							"https://www.tiktok.com/@marea.example"
+						]
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://marea.example/#website",
+						"url": "https://marea.example/",
+						"name": "Marea",
+						"publisher": {
+							"@id": "https://marea.example/#organization"
+						},
+						"potentialAction": {
+							"@type": "SearchAction",
+							"target": "https://marea.example/search?q={search_term_string}",
+							"query-input": "required name=search_term_string"
+						}
+					},
+					{
+						"@type": "CollectionPage",
+						"@id": "https://marea.example/#home",
+						"url": "https://marea.example/",
+						"name": "Marea Home - Spring Wave Collection 2026",
+						"description": "Home page featuring Spring Wave Collection, New Arrivals, and Best Sellers.",
+						"isPartOf": {
+							"@id": "https://marea.example/#website"
+						},
+						"about": [
+							"Footwear",
+							"Shirts",
+							"Pants",
+							"Accessories"
+						],
+						"hasPart": {
+							"@type": "ItemList",
+							"name": "Featured Products",
+							"itemListOrder": "https://schema.org/ItemListOrderAscending",
+							"numberOfItems": 8,
+							"itemListElement": [
+								{
+									"@type": "Product",
+									"name": "Coastal Runner",
+									"category": "Footwear",
+									"image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+									"offers": {
+										"@type": "Offer",
+										"priceCurrency": "USD",
+										"price": "89.00",
+										"availability": "https://schema.org/InStock",
+										"url": "https://marea.example/products/coastal-runner"
+									}
+								},
+								{
+									"@type": "Product",
+									"name": "Linen Drift Shirt",
+									"category": "Shirts",
+									"image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c",
+									"offers": {
+										"@type": "Offer",
+										"priceCurrency": "USD",
+										"price": "54.00",
+										"availability": "https://schema.org/InStock",
+										"url": "https://marea.example/products/linen-drift-shirt"
+									}
+								},
+								{
+									"@type": "Product",
+									"name": "Harbor Taper Pants",
+									"category": "Pants",
+									"image": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a",
+									"offers": {
+										"@type": "Offer",
+										"priceCurrency": "USD",
+										"price": "72.00",
+										"availability": "https://schema.org/InStock",
+										"url": "https://marea.example/products/harbor-taper-pants"
+									}
+								},
+								{
+									"@type": "Product",
+									"name": "Tide Strap Bag",
+									"category": "Accessories",
+									"image": "https://images.unsplash.com/photo-1547949003-9792a18a2601",
+									"offers": {
+										"@type": "Offer",
+										"priceCurrency": "USD",
+										"price": "46.00",
+										"availability": "https://schema.org/InStock",
+										"url": "https://marea.example/products/tide-strap-bag"
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		</script>
 	</head>
 
 	<body class="bg-body text-info font-sans min-h-screen">
