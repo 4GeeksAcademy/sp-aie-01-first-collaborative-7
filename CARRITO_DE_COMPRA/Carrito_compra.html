@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marea | Carrito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="m-0 min-h-screen text-[#213437] [font-family:'Manrope','Segoe_UI',sans-serif] [background:radial-gradient(circle_at_12%_10%,rgba(237,213,199,0.42),transparent_40%),radial-gradient(circle_at_95%_92%,rgba(117,155,156,0.22),transparent_46%),linear-gradient(180deg,#f7f8f8_0%,#eef4f5_70%,#e8eff1_100%)]">
+  <main class="mx-auto w-[min(1120px,92vw)] pt-9 pb-12 max-[700px]:w-[min(96vw,640px)] max-[700px]:pt-6">
+    <header class="mb-7">
+      <p class="m-0 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-[#d79b85]">Marea</p>
+      <h1 class="m-0 mt-2 text-[clamp(1.7rem,2.9vw,2.5rem)] tracking-[0.01em]">Tu carrito de compras</h1>
+      <p class="m-0 text-[#5a7274]">Revisa tus productos y finaliza tu pedido en segundos.</p>
+    </header>
+
+    <section class="grid grid-cols-[1.8fr_1fr] items-start gap-5 max-[980px]:grid-cols-1" aria-label="Contenido del carrito">
+      <section class="rounded-[15px] border border-[#d6dddd] bg-[#fbf9f8] p-5 shadow-[0_8px_22px_rgba(35,58,60,0.08)] max-[700px]:rounded-[14px]" aria-label="Lista de productos">
+        <div class="mb-[1.1rem] flex items-baseline justify-between gap-4">
+          <h2 class="m-0 text-xl">Productos</h2>
+          <p id="items-count" class="m-0 text-[0.95rem] text-[#60797a]" aria-live="polite">0 productos</p>
+        </div>
+
+        <div id="cart-items" class="grid gap-4"></div>
+
+        <p id="empty-cart-message" class="m-0 hidden rounded-[10px] border border-dashed border-[#d9b8ab] p-4 text-center text-[#7c6054]" role="status" aria-live="polite">
+          Tu carrito está vacío.
+        </p>
+      </section>
+
+      <aside class="sticky top-4 rounded-[15px] border border-[#d6dddd] bg-[#fbf9f8] p-5 shadow-[0_8px_22px_rgba(35,58,60,0.08)] max-[980px]:static max-[700px]:rounded-[14px]" aria-label="Resumen de compra">
+        <h2 class="m-0 text-xl">Resumen</h2>
+
+        <div class="my-4 flex items-center justify-between gap-4 text-[#526568]">
+          <span>Subtotal</span>
+          <strong id="subtotal" class="text-[#243434]">$0.00</strong>
+        </div>
+        <div class="my-4 flex items-center justify-between gap-4 text-[#526568]">
+          <span>Impuestos (21%)</span>
+          <strong id="taxes" class="text-[#243434]">$0.00</strong>
+        </div>
+
+        <hr class="my-4 border-0 border-t border-[#e8d5cb]">
+
+        <div class="my-4 flex items-center justify-between gap-4 text-[1.08rem] text-[#a06f5e]">
+          <span>Total</span>
+          <strong id="total" class="text-[1.42rem] text-[#2f5656]">$0.00</strong>
+        </div>
+
+        <button id="checkout-button" class="mt-3 w-full rounded-xl bg-gradient-to-b from-[#6f9e9d] to-[#5b9292] px-4 py-3.5 text-base font-bold text-white transition duration-200 hover:-translate-y-px hover:brightness-105 hover:shadow-[0_8px_18px_rgba(90,134,134,0.34)] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none" type="button">
+          Comprar
+        </button>
+      </aside>
+    </section>
+  </main>
+
+  <template id="cart-item-template">
+    <article class="cart-item grid grid-cols-[90px_minmax(150px,1fr)_auto_auto_auto] items-center gap-3.5 rounded-xl border border-[#d5dede] bg-[#f7f8f8] p-3 transition duration-200 hover:-translate-y-px hover:border-[#c5d1d1] hover:shadow-[0_7px_16px_rgba(73,97,98,0.12)] max-[700px]:grid-cols-1 max-[700px]:gap-2.5">
+      <img class="item-image h-[90px] w-[90px] rounded-[10px] border border-[#c8d4d4] object-cover max-[700px]:h-auto max-[700px]:max-h-[170px] max-[700px]:w-full" src="" alt="">
+
+      <div class="item-info min-w-0">
+        <h3 class="item-name m-0 text-[1.03rem] font-extrabold leading-[1.3]"></h3>
+        <p class="item-unit-price m-0 mt-1.5 text-[0.95rem] text-[#547073]"></p>
+      </div>
+
+      <div class="item-quantity inline-flex items-center overflow-hidden rounded-full border border-[#d2ceca]" aria-label="Selector de cantidad">
+        <button class="qty-btn minus h-[34px] w-[34px] border-0 bg-[#edd5c7] text-[1.05rem] font-bold text-[#344f52] transition duration-200 hover:bg-[#e4c8b7]" type="button" aria-label="Disminuir cantidad">-</button>
+        <input class="qty-input h-[34px] w-12 appearance-none border-0 bg-[#f8fbfb] text-center font-bold text-[#1f2d2d] outline-none" type="number" min="1" step="1" value="1" aria-label="Cantidad del producto">
+        <button class="qty-btn plus h-[34px] w-[34px] border-0 bg-[#edd5c7] text-[1.05rem] font-bold text-[#344f52] transition duration-200 hover:bg-[#e4c8b7]" type="button" aria-label="Aumentar cantidad">+</button>
+      </div>
+
+      <p class="item-total m-0 min-w-[82px] text-right text-[1.05rem] font-bold text-[#3d676a] max-[700px]:text-left" aria-label="Total del producto"></p>
+
+      <button class="remove-btn rounded-full border border-[#f9d3cf] bg-[#fff7f6] px-3.5 py-2 font-bold text-[#f18b82] transition duration-200 hover:-translate-y-px hover:bg-[#f9d3cf] hover:text-[#d06d65] max-[700px]:w-full" type="button" aria-label="Eliminar producto">Eliminar</button>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
