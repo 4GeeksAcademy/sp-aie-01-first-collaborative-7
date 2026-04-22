@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marea | Checkout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            body: "#ffffff",
+            primary: "#588b8b",
+            secondary: "#ffd5c2",
+            info: "#2f2f2f"
+          },
+          fontFamily: {
+            sans: ["Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body
+  class="m-0 min-h-screen bg-gradient-to-br from-secondary to-primary text-body font-sans">
+  <!-- Reusable Navbar -->
+  <header
+    class="sticky top-0 z-30 bg-gradient-to-r from-secondary/90 to-primary/90 backdrop-blur border-b border-white/20">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
+      <a href="../index.html" class="flex items-center gap-3 shrink-0">
+        <span class="h-10 w-10 rounded-full bg-primary grid place-content-center text-white font-bold">M</span>
+        <span class="text-xl font-bold tracking-wide">Marea</span>
+      </a>
+
+      <div class="flex-[2] min-w-0">
+        <label for="search" class="sr-only">Search</label>
+        <div class="relative">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white/60">🔍</span>
+          <input id="search" type="text" placeholder="Search products, campaigns, and styles"
+            class="w-full rounded-full bg-white/10 border border-white/20 py-2.5 pl-10 pr-4 text-sm placeholder:text-white/55 focus:outline-none focus:ring-2 focus:ring-primary" />
+        </div>
+      </div>
+
+      <div class="relative">
+        <button type="button"
+          class="inline-flex items-center justify-center sm:justify-start gap-2 rounded-full border border-white/20 bg-white/5 h-9 w-9 sm:h-auto sm:w-auto sm:px-4 sm:py-2 text-sm font-semibold hover:bg-white/10 transition"
+          aria-label="My Account">
+          <span class="h-7 w-7 rounded-full bg-secondary text-info grid place-content-center font-bold">U</span>
+          <span class="hidden sm:inline">My Account</span>
+          <span class="hidden sm:inline text-white/70">▾</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main
+    class="mx-auto grid w-full max-w-6xl gap-5 px-4 py-8 sm:px-6 lg:grid-cols-3 lg:px-8"
+    aria-labelledby="checkout-title">
+    <section
+      class="rounded-2xl border border-white/30 bg-primary/20 p-5 shadow-lg lg:col-span-2">
+      <header class="checkout-header">
+        <p class="brand m-0 font-bold uppercase tracking-widest text-secondary">Marea</p>
+        <h1 id="checkout-title" class="m-0 mt-1 mb-2 text-3xl font-bold text-secondary">Formulario de pago</h1>
+        <p class="step-meta m-0 text-white/80" id="stepMeta">Paso 1 de 3</p>
+
+        <div class="progress mt-4" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"
+          aria-label="Progreso del checkout">
+          <div class="progress-track h-2 w-full overflow-hidden rounded-full bg-white/40">
+            <div
+              class="progress-fill h-full w-1/3 rounded-full bg-gradient-to-r from-secondary to-primary transition-all duration-300 ease-out"
+              id="progressFill"></div>
+          </div>
+          <ol class="progress-steps mt-2.5 flex list-none justify-between p-0" aria-hidden="true">
+            <li
+              class="active grid h-7 w-7 place-items-center rounded-full border border-white/40 text-info/70 [&.active]:border-transparent [&.active]:bg-primary [&.active]:font-bold [&.active]:text-body">
+              1</li>
+            <li
+              class="grid h-7 w-7 place-items-center rounded-full border border-white/40 text-info/70 [&.active]:border-transparent [&.active]:bg-primary [&.active]:font-bold [&.active]:text-body">
+              2</li>
+            <li
+              class="grid h-7 w-7 place-items-center rounded-full border border-white/40 text-info/70 [&.active]:border-transparent [&.active]:bg-primary [&.active]:font-bold [&.active]:text-body">
+              3</li>
+          </ol>
+        </div>
+      </header>
+
+      <form id="checkoutForm" class="mt-4" novalidate>
+        <section class="step active translate-y-0 opacity-100 transition-all duration-300" data-step="1"
+          aria-labelledby="step1-title">
+          <h2 id="step1-title" class="mt-0 mb-4">Datos personales</h2>
+
+          <label for="fullName" class="my-0 mt-2 block text-sm text-info/70">Nombre completo</label>
+          <input id="fullName"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="fullName" type="text" autocomplete="name" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="fullName"></p>
+
+          <label for="email" class="my-0 mt-2 block text-sm text-info/70">Correo electronico</label>
+          <input id="email"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="email" type="email" autocomplete="email" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="email"></p>
+
+          <label for="phone" class="my-0 mt-2 block text-sm text-info/70">Telefono</label>
+          <input id="phone"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="phone"></p>
+        </section>
+
+        <section class="step translate-y-0 opacity-100 transition-all duration-300" data-step="2"
+          aria-labelledby="step2-title" hidden>
+          <h2 id="step2-title" class="mt-0 mb-4">Direccion de entrega</h2>
+
+          <label for="address" class="my-0 mt-2 block text-sm text-info/70">Direccion (calle y numero)</label>
+          <input id="address"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="address" type="text" autocomplete="street-address" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="address"></p>
+
+          <div class="field-row grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div>
+              <label for="city" class="my-0 mt-2 block text-sm text-info/70">Ciudad</label>
+              <input id="city"
+                class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+                name="city" type="text" autocomplete="address-level2" required />
+              <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="city"></p>
+            </div>
+            <div>
+              <label for="postalCode" class="my-0 mt-2 block text-sm text-info/70">Codigo postal</label>
+              <input id="postalCode"
+                class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+                name="postalCode" type="text" autocomplete="postal-code" required />
+              <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="postalCode"></p>
+            </div>
+          </div>
+
+          <label for="country" class="my-0 mt-2 block text-sm text-info/70">Pais</label>
+          <input id="country"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="country" type="text" autocomplete="country-name" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="country"></p>
+        </section>
+
+        <section class="step translate-y-0 opacity-100 transition-all duration-300" data-step="3"
+          aria-labelledby="step3-title" hidden>
+          <h2 id="step3-title" class="mt-0 mb-4">Pago con tarjeta</h2>
+
+          <label for="cardNumber" class="my-0 mt-2 block text-sm text-info/70">Numero de tarjeta</label>
+          <input id="cardNumber"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="cardNumber" type="text" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456"
+            autocomplete="cc-number" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="cardNumber"></p>
+
+          <label for="cardHolder" class="my-0 mt-2 block text-sm text-info/70">Nombre del titular</label>
+          <input id="cardHolder"
+            class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+            name="cardHolder" type="text" autocomplete="cc-name" required />
+          <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="cardHolder"></p>
+
+          <div class="field-row grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div>
+              <label for="cardExpiry" class="my-0 mt-2 block text-sm text-info/70">Fecha de expiracion</label>
+              <input id="cardExpiry"
+                class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+                name="cardExpiry" type="text" inputmode="numeric" maxlength="5" placeholder="MM/AA"
+                autocomplete="cc-exp" required />
+              <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="cardExpiry"></p>
+            </div>
+            <div>
+              <label for="cardCvv" class="my-0 mt-2 block text-sm text-info/70">CVV</label>
+              <input id="cardCvv"
+                class="w-full rounded-lg border border-primary/30 bg-white px-3 py-3 text-info outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 [&.is-error]:border-red-400 [&.is-valid]:border-emerald-300"
+                name="cardCvv" type="password" inputmode="numeric" maxlength="4" autocomplete="cc-csc" required />
+              <p class="field-error mt-1 min-h-4 text-xs text-red-400" data-error-for="cardCvv"></p>
+            </div>
+          </div>
+
+          <p class="security-note mt-4 rounded-lg border-l-4 border-primary bg-primary/10 px-3 py-3 text-info"
+            aria-live="polite">
+            <span class="lock-icon mr-1.5" aria-hidden="true">&#128274;</span>
+            Candado seguro. Tus datos viajan cifrados de extremo a extremo.
+          </p>
+        </section>
+
+        <div class="actions mt-2 flex justify-between gap-3">
+          <button type="button" id="backBtn"
+            class="btn btn-ghost rounded-lg border border-primary/40 bg-white px-4 py-3 text-sm font-bold text-info transition hover:-translate-y-px hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-45"
+            disabled>Volver</button>
+          <button type="button" id="nextBtn"
+            class="btn btn-primary rounded-lg border-0 bg-primary px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-px hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-45">Siguiente</button>
+          <button type="submit" id="confirmBtn"
+            class="btn btn-primary btn-confirm rounded-lg border-0 bg-gradient-to-br from-primary to-primary/80 px-4 py-3 text-sm font-bold text-white shadow-lg transition hover:-translate-y-px hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-45"
+            hidden>Confirmar compra</button>
+        </div>
+      </form>
+
+      <p class="form-status mt-4 min-h-5 text-red-400" id="formStatus" role="status" aria-live="polite"></p>
+    </section>
+
+    <aside
+      class="summary rounded-2xl border border-white/30 bg-primary/20 p-4 shadow-lg lg:sticky lg:top-4"
+      aria-label="Resumen de compra">
+      <h2 class="my-1 text-xl font-bold text-secondary">Resumen</h2>
+      <div class="summary-line flex items-center justify-between py-2 text-info/70">
+        <span>Subtotal</span>
+        <strong>$84.00</strong>
+      </div>
+      <div class="summary-line flex items-center justify-between py-2 text-info/70">
+        <span>Impuestos</span>
+        <strong>$16.00</strong>
+      </div>
+      <div
+        class="summary-total mt-2 flex items-center justify-between border-t border-secondary/60 pt-3 text-xl text-info">
+        <span>Total</span>
+        <strong>$100.00</strong>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Reusable Footer -->
+  <footer class="mt-10 border-t border-white/10 bg-black/20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <h3 class="font-bold text-secondary">Marea</h3>
+        <p class="mt-3 text-sm text-white/70 max-w-xs">
+          Curated essentials designed with comfort, movement, and coastal energy in mind.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Categories</h4>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li><a href="../catalogo/catalogo.html" class="hover:text-secondary">Footwear</a></li>
+          <li><a href="../catalogo/catalogo.html" class="hover:text-secondary">Shirts</a></li>
+          <li><a href="../catalogo/catalogo.html" class="hover:text-secondary">Pants</a></li>
+          <li><a href="../catalogo/catalogo.html" class="hover:text-secondary">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Legal</h4>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li><a href="#" class="hover:text-secondary">Terms and Conditions</a></li>
+          <li><a href="#" class="hover:text-secondary">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-secondary">About the Brand</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold">Contact</h4>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li>support@marea.shop</li>
+          <li>+1 (800) 214-0725</li>
+          <li>24 Ocean Drive, Miami, FL</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
