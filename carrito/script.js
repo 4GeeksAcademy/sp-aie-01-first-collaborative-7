@@ -138,7 +138,6 @@ dom.checkoutButton.addEventListener("click", () => {
   if (cartItems.length === 0) {
     return;
   }
-  window.alert("¡Gracias por comprar en Marea! Tu pedido está listo para procesarse.");
 });
 
 render();
