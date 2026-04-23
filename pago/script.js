@@ -138,21 +138,12 @@ backBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-  if (!validateStep(currentStep)) {
-    formStatus.textContent = "Completa los campos requeridos para continuar.";
-    return;
-  }
   showStep(currentStep + 1);
 });
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  if (!validateStep(3)) {
-    formStatus.textContent = "Revisa los datos de pago antes de confirmar.";
-    return;
-  }
-
+  formStatus.classList.add("text-green-600", "font-bold", "mt-4", "text-center");
   formStatus.textContent = "Compra confirmada. Gracias por elegir Marea.";
 });
 

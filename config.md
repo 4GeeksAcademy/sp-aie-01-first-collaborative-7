@@ -4,9 +4,9 @@
 
 - Style: 
   * Colors:
-    + Body: dark grey
+    + Body: #ffffff
     + Primary: #588b8b
     + Secondary: #ffd5c2
-    + Info: #ffffff
+    + Info: dark grey
   * Font: 
     + Arial
